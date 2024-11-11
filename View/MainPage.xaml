@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:Frontend.ViewModel"
+             xmlns:model="clr-namespace:Frontend.Model"
+             x:Class="Frontend.View.MainPage"
+             x:DataType="viewmodel:MainPageViewModel"
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="ModalAnimated"
+    >
+
+        <Grid
+            Padding="10,0"
+            ColumnSpacing="10"
+            RowDefinitions="Auto,Auto,*">
+            
+            <!-- Logo -->
+            <Image
+                Grid.Row="0"
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <!-- Scrollable Friends List -->
+             <CollectionView
+                 Grid.Row="1"
+                 Grid.ColumnSpan="2"
+                 ItemsSource="{Binding Friends}"
+                 SelectionMode="None">
+                 <CollectionView.ItemTemplate>
+                     <DataTemplate x:DataType="model:Friend">
+                         <Grid Padding="10">
+                             <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                                 <Frame.GestureRecognizers>
+                                     <TapGestureRecognizer 
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=GoToMessageCommand}"
+                                         CommandParameter="{Binding .}"/>
+                                 </Frame.GestureRecognizers>
+                                 <Grid Padding="0" ColumnDefinitions="125,*">
+                                     <Image Aspect="AspectFill" Source="{Binding IconUrl}"
+                                            WidthRequest="125"
+                                            HeightRequest="125"/>
+                                     <VerticalStackLayout
+                                         VerticalOptions="Center"
+                                         Grid.Column="1"
+                                         Padding="10">
+                                         <Label Style="{StaticResource LargeLabel}" Text="{Binding Username}" />
+                                         <Label Style="{StaticResource MediumLabel}" Text="{Binding Status}" />
+                                     </VerticalStackLayout>
+                                 </Grid>
+                             </Frame>
+                         </Grid>
+                     </DataTemplate>
+                 </CollectionView.ItemTemplate>
+             </CollectionView>
+            
+            <Button 
+                Grid.Row="2"
+                Padding="10"
+                VerticalOptions="End"
+                HeightRequest="50"
+                WidthRequest="200"
+                Text="Refresh"
+                Command="{Binding GetFriendsCommand}" />
+        </Grid>
+</ContentPage>

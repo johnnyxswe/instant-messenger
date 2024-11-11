@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="Frontend.app/Frontend">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>Frontend.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>Frontend.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/johnnygonzales/dev/InstantMessenger/Frontend/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>Frontend.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/johnnygonzales/dev/InstantMessenger/Frontend</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
