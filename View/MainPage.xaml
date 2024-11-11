@@ -13,7 +13,7 @@
         <Grid
             Padding="10,0"
             ColumnSpacing="10"
-            RowDefinitions="Auto,Auto,*">
+            RowDefinitions="Auto,*,Auto">
             
             <!-- Logo -->
             <Image

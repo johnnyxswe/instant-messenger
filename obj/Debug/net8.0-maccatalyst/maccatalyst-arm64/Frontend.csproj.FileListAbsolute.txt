@@ -302,3 +302,4 @@
 /Users/johnnygonzales/dev/InstantMessenger/Frontend/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Frontend.pdb
 /Users/johnnygonzales/dev/InstantMessenger/Frontend/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Frontend.genruntimeconfig.cache
 /Users/johnnygonzales/dev/InstantMessenger/Frontend/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/ref/Frontend.dll
+/Users/johnnygonzales/dev/InstantMessenger/Frontend/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Frontend.sourcelink.json
